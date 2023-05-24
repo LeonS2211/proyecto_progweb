@@ -16,6 +16,7 @@ const inter = Inter({ subsets: ['latin'] })
 function RootLayout({ children }) {
 const router = useRouter();
 const [name, setName] = useState('George');
+const [loggedIn,setLoggedIn] = useState(null);
 const [asideVisible, setAsideVisible] = useState(false);
 const handleClick = () => {
     setAsideVisible(!asideVisible);
@@ -40,27 +41,40 @@ const handleClick3 = () => {
 
       </head>
       <body className='body'>
-      <header className='cabecera'>
-            <div className='menu-icon'onClick={handleClick}>&#9776;</div>
-            <main className='Titulo'>Atencion de Citas</main>
-            <div>Perfil</div>
+      {(loggedIn == null) ? 
+      <div>
+        <header className='cabecera'>
+          <main className='Titulo2'> Sistema de Citas para Atencion a Estudiantes</main>
         </header>
-    <div className='container'>
-        <aside className={`aside ${asideVisible ? 'show' : ''}`}>
-    <ul>
-        <button onClick={handleClick1} className='Bpri'>
-      Principal
-      </button>
-      <button onClick={handleClick2} className='Bpri'>
-      Perfil
-      </button>
-      <button onClick={handleClick3} className='Bpri'>
-      Horarios
-      </button>
-    </ul>
-        </aside>
-        {children}
+        <div className='container'>
+          {children}
         </div>
+      </div>
+      :
+      <div>
+        <header className='cabecera'>
+          <div className='menu-icon'onClick={handleClick}>&#9776;</div>
+            <main className='Titulo'> Atencion al cliente</main>
+          <div>Perfil</div>
+        </header>
+        <div className='container'>
+          <aside className={`aside ${asideVisible ? 'show' : ''}`}>
+            <ul>
+              <button onClick={handleClick1} className='Bpri'>
+                Principal
+              </button>
+              <button onClick={handleClick2} className='Bpri'>
+                Perfil
+              </button>
+              <button onClick={handleClick3} className='Bpri'>
+              Horarios
+              </button>
+            </ul>
+          </aside>
+          {children}
+          </div>
+        </div>
+        }
       </body>        
     </html>
   )
