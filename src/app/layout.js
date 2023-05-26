@@ -15,8 +15,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 function RootLayout({ children }) {
 const router = useRouter();
-const [name, setName] = useState('George');
-const [loggedIn,setLoggedIn] = useState(null);
+var loggedIn = JSON.parse(localStorage.getItem('loggedIn'))
 const [asideVisible, setAsideVisible] = useState(false);
 const handleClick = () => {
     setAsideVisible(!asideVisible);
@@ -31,7 +30,7 @@ const handleClick2 = () => {
     alert('Hola2')
 }
 const handleClick3 = () => {
-    router.push('/horario(Docentes)')
+  window.location.href = "/horario"
 }
 
   return (
@@ -41,7 +40,7 @@ const handleClick3 = () => {
 
       </head>
       <body className='body'>
-      {(loggedIn == null) ? 
+      {(loggedIn === null) ? 
       <div>
         <header className='cabecera'>
           <main className='Titulo2'> Sistema de Citas para Atencion a Estudiantes</main>
