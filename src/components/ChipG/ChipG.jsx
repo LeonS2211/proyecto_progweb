@@ -7,3 +7,4 @@ const ChipG = ({ text }) => {
 }
 
 export default ChipG
+
