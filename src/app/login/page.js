@@ -9,8 +9,7 @@ import { Dangrek } from "next/font/google";
 const Login = () => {
 
   const [errorIn, setErrorIn] = useState("");
-  const basedatosL=JSON.parse(localStorage.getItem('basedatos'))
-  const [basedatosO, setBasedatosO]= useState(basedatosL)
+  const basedatosO=JSON.parse(localStorage.getItem('basedatos'))
 
   localStorage.setItem('loggedIn', null)
 
@@ -23,17 +22,14 @@ const Login = () => {
     var pass = document.getElementById('passL');
 
     
-    const userData = basedatosO.find((user) => user.email === uname.value);
+    var userData = basedatosO.find((user) => user.email === uname.value);
 
-    
     if (userData) {
       if (userData.password !== pass.value) {
        
         setErrorIn("pass");
       } else {
         localStorage.setItem('loggedIn',JSON.stringify(userData))
-
-        setErrorIn("");
         window.location.href = "/principal"
       }
     } else {
@@ -46,41 +42,35 @@ const Login = () => {
     window.location.href = "../"
   }
 
-  
-  const renderForm = (
-    <div className="form">
-      <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="unameL">
-        <Form.Label>Correo electronico</Form.Label>
-        <Form.Control type="text" placeholder="|" required id="unameL" />
-        {(errorIn=="uname") ? <div>el usuario o email no existe</div>:""}
-      </Form.Group>
 
-      <Form.Group className="mb-3" controlId="passL" >
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="|" required id="passL"/>
-        {(errorIn=="pass") ? <div>la contraseña esta mal</div>:""}
-      </Form.Group>
-      <div className="opci">
-            <Button  type="submit" className='op1' texto="Iniciar Sesion"/>
-      <div className="op2"><Link href="/registro" text="Registro de nuevo usuario "/><span/>
-      <Link href="#" text="Olvide mi contraseña"/></div>
-      </div>
-    </Form>
-    <Form onSubmit={handleSalir}>
+  return (
+      <div className="login-form">
+        <div className="form">
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="unameL">
+              <Form.Label>Correo electronico</Form.Label>
+              <Form.Control type="text" placeholder="|" required id="unameL" />
+              {(errorIn=="uname") ? <div>el usuario o email no existe</div>:""}
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="passL" >
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="|" required id="passL"/>
+              {(errorIn=="pass") ? <div>la contraseña esta mal</div>:""}
+            </Form.Group>
+            <div className="opci">
+              <Button  type="submit" className='op1' texto="Iniciar Sesion"/>
+            <div className="op2"><Link href="/registro" text="Registro de nuevo usuario "/><span/>
+              <Link href="#" text="Olvide mi contraseña"/></div>
+            </div>
+          </Form>
+        <Form onSubmit={handleSalir}>
         <div className="op3">
         <Button variant="danger" type="submit"  texto="Salir"/>
         </div>
-    </Form>
-    </div>
-  );
-
-  return (
-    
-      <div className="login-form">
-        {renderForm}
+        </Form>
+        </div>
       </div>
-    
   );
 }
 export default Login
