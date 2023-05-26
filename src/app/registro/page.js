@@ -34,6 +34,13 @@ const Registro = () => {
         if (passC.value !== pass.value) {
             setErrorIn("passC");
           } else {
+            if (((tipoDoc.value) == "DNI") && ((nDoc.value).length) != 8){
+                setErrorIn("docLength")
+              }else{
+              if(((tipoDoc.value) == "Pasaporte") || ((tipoDoc.value) == "Carnet Extranjero") && ((nDoc.value).length) != 12){
+                setErrorIn("docLength")
+              }else{
+            
             setErrorIn("");
             var newUserData ={email: email.value,
                               password: pass.value,
@@ -45,7 +52,9 @@ const Registro = () => {
             basedatosL.push(newUserData)
             localStorage.setItem('basedatos',JSON.stringify(basedatosL))
             window.location.href = "/login"
+            }
           }
+        }
       }
     
   }
@@ -98,6 +107,7 @@ const Registro = () => {
         <Form.Group as={Col} controlId="NroDocR">
           <Form.Label>Nro de documento</Form.Label>
           <Form.Control type="text" placeholder="|" required id ="NroDocR"/>
+          {(errorIn=="docLength") ? <div>El tipo de documento y la cantidad de numeros no coinciden</div>:""}
         </Form.Group>
       </Row>
       <Row className="mb-3">
