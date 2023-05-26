@@ -15,8 +15,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 function RootLayout({ children }) {
 const router = useRouter();
-const [name, setName] = useState('George');
-const [loggedIn,setLoggedIn] = useState(null);
+var loggedIn = JSON.parse(localStorage.getItem('loggedIn'))
 const [asideVisible, setAsideVisible] = useState(false);
 const handleClick = () => {
     setAsideVisible(!asideVisible);
@@ -31,7 +30,10 @@ const handleClick2 = () => {
     alert('Hola2')
 }
 const handleClick3 = () => {
-    router.push('/horario(Docentes)')
+  window.location.href = "/horario"
+}
+const handleClick4 = () => {
+  window.location.href = "/miscitas"
 }
 
   return (
@@ -66,9 +68,16 @@ const handleClick3 = () => {
               <button onClick={handleClick2} className='Bpri'>
                 Perfil
               </button>
+              {(loggedIn.role== "profesor") ? 
               <button onClick={handleClick3} className='Bpri'>
               Horarios
               </button>
+              :
+              <button onClick={handleClick4} className='Bpri'>
+              Citas
+              </button>}
+
+              
             </ul>
           </aside>
           {children}
