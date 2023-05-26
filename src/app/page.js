@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import Link from '../components/Link/Link.jsx';
 
 
+
 localStorage.setItem('loggedIn', null)
 
 export default function Home() {
@@ -12,9 +13,11 @@ export default function Home() {
       
         <div className={styles.red}>
         <Link href="/login " text="BIENVENIDO AL MUNDO MAGICO DE GUMBALL" />
+          <Link href="/paginaComp" text="paginaComp"></Link>
         </div>
 
     </div>
+
   )
 }
 
