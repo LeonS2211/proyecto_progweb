@@ -25,10 +25,12 @@ const Login = () => {
   */
   
 
+
   const [errorIn, setErrorIn] = useState("");
   const basedatosL=JSON.parse(localStorage.getItem('basedatos'))
   const [basedatosO, setBasedatosO]= useState(basedatosL)
   localStorage.setItem('loggedIn', null)
+
 
   const handleSubmit = (event) => {
     
@@ -36,7 +38,6 @@ const Login = () => {
 
     var uname= document.getElementById('unameL'); 
     var pass = document.getElementById('passL');
-    
 
     
     const userData = basedatosO.find((user) => user.username === uname.value);
@@ -95,8 +96,6 @@ const Login = () => {
       <div className="login-form">
         {renderForm}
       </div>
-      
-      
     
   );
 }

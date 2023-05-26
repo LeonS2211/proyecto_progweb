@@ -1,5 +1,5 @@
 "use client"
-import 'bootstrap/dist/css/bootstrap.css'; // Add this line
+import 'bootstrap/dist/css/bootstrap.css'; 
 import 'bootstrap/dist/js/bootstrap.bundle.js' ;
 import '../components/Style/Style.jsx'
 import './globals.css'
@@ -31,9 +31,11 @@ const handleClick2 = () => {
 }
 const handleClick3 = () => {
   window.location.href = "/horario"
+
 }
 const handleClick4 = () => {
   window.location.href = "/miscitas"
+
 }
 
   return (
@@ -43,7 +45,7 @@ const handleClick4 = () => {
 
       </head>
       <body className='body'>
-      {(loggedIn == null) ? 
+      {(loggedIn === null) ? 
       <div>
         <header className='cabecera'>
           <main className='Titulo2'> Sistema de Citas para Atencion a Estudiantes</main>

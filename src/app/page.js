@@ -3,7 +3,9 @@
 import styles from './page.module.css'
 import Link from '../components/Link/Link.jsx';
 
+
 localStorage.setItem('loggedIn', null)
+
 export default function Home() {
   return (
     <div className={styles.inte}>
