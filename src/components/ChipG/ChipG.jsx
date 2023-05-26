@@ -1,9 +1,9 @@
 import './style.css'
 
-const Chip = ({ text }) => {
+const ChipG = ({ text }) => {
     return (
         <span className="chip">{ text }</span>
     )
 }
 
-export default Chip
+export default ChipG

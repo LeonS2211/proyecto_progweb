@@ -10,7 +10,7 @@ import TabContent from 'react-bootstrap/TabContent';
 import { Tab, Tabs, TabPane  } from 'react-bootstrap';
 import TabContainer from 'react-bootstrap/TabContainer';
 
-import Chip from '../../components/Chip/Chip.jsx'
+import Chip from '../../components/ChipG/ChipG.jsx'
 import './styles.css'
 
 const paginaComp=()=>{
