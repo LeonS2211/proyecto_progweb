@@ -6,13 +6,47 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Select from '../../components/Select/Select.jsx'
+import { useState } from 'react'
 
 const Registro = () => {
+  const [errorIn, setErrorIn] = useState("");
+  localStorage.setItem('loggedIn', null)
 
-  const basedatosL=JSON.parse(localStorage.getItem('basedatos'))
+  const handleRegistro = (event) =>{
+    event.preventDefault()
+    const basedatosL=JSON.parse(localStorage.getItem('basedatos'))
 
+    var email= document.getElementById('EmailR'); 
+    var pass = document.getElementById('PasswordR');
+    var passC = document.getElementById('PasswordConfirmR');
+    var nom= document.getElementById('NombreR');
+    var ape= document.getElementById('ApellidosR');
+    var tipoDoc= document.getElementById('TipoDocR');
+    var nDoc= document.getElementById('NroDocR');
+    var role= document.getElementById('RoleR');
 
-  const handleRegistro = () =>{
+    const notNewUserData = basedatosL.find((user) => user.email === email.value)
+
+    if (notNewUserData) {
+        setErrorIn("email");
+      } else {
+
+        if (passC.value !== pass.value) {
+            setErrorIn("passC");
+          } else {
+            setErrorIn("");
+            var newUserData ={email: email.value,
+                              password: pass.value,
+                              nombre: nom.value,
+                              apellido:ape.value,
+                              tipoDoc:tipoDoc.value,
+                              nDoc:nDoc.value,
+                              role:role.value}
+            basedatosL.push(newUserData)
+            localStorage.setItem('basedatos',JSON.stringify(basedatosL))
+            window.location.href = "/login"
+          }
+      }
     
   }
     return (
@@ -21,7 +55,8 @@ const Registro = () => {
       <Row className="mb-3">
         <Form.Group as={Col} controlId="EmailR">
           <Form.Label>Correo electronico</Form.Label>
-          <Form.Control type="email" placeholder="|" required id="EmailR"/>
+          <Form.Control type="text" placeholder="|" required id="EmailR"/>
+          {(errorIn=="email") ? <div>el usuario o email ya existe</div>:""}
         </Form.Group>
 
         <Form.Group as={Col} controlId="PasswordR">
@@ -36,6 +71,7 @@ const Registro = () => {
         <Form.Group as={Col} controlId="PasswordConfirmR">
           <Form.Label>Ingrese Password nuevamente</Form.Label>
           <Form.Control type="password" placeholder="|" id="PasswordConfirmR"/>
+          {(errorIn=="passC") ? <div>Las contraseñas no coinciden</div>:""}
         </Form.Group>
       </Row>
 
@@ -43,9 +79,9 @@ const Registro = () => {
       <h6>Datos personales</h6>
 
       <Row className="mb-3">
-        <Form.Group as={Col} controlId="NombresR">
+        <Form.Group as={Col} controlId="NombreR">
           <Form.Label>Nombres</Form.Label>
-          <Form.Control type="text" placeholder="|" required id="NombresR"/>
+          <Form.Control type="text" placeholder="|" required id="NombreR"/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="ApellidosR">
@@ -68,7 +104,7 @@ const Registro = () => {
         
         <Form.Group as={Col} controlId="RoleR">
           <Form.Label>Rol</Form.Label>
-          <Form.Control type="text" placeholder="|" required id="RoleR"/>
+          <Select optDefault ="alumno" opt1="profesor" required id="roleR"></Select>
         </Form.Group>
         <Form.Group as={Col} controlId="space">
         </Form.Group>
