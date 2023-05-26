@@ -5,14 +5,32 @@ import Button from '../../components/Button/Button.jsx';
 import Form from 'react-bootstrap/Form';
 import Link from '../../components/Link/Link.jsx';
 import { Dangrek } from "next/font/google";
+import BotonCalif from "@/components/BotonCalif/BotonCalif.jsx";
 
 const Login = () => {
+/*
+  const basedatos = [
+    {
+      username: "Leonardo@gmail.com",
+      password: "broder1843",
+      role: "alumno"
+    },
+    {
+      username: "Alfredo",
+      password: "michi123",
+      role: "profesor"
+    }
+  ];
+  localStorage.setItem('basedatos',JSON.stringify(basedatos))
+  */
+  
+
 
   const [errorIn, setErrorIn] = useState("");
   const basedatosL=JSON.parse(localStorage.getItem('basedatos'))
   const [basedatosO, setBasedatosO]= useState(basedatosL)
   localStorage.setItem('loggedIn', null)
-  
+
 
   const handleSubmit = (event) => {
     

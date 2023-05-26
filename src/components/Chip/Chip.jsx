@@ -1,9 +1,14 @@
 
 import './style.css'
 
-const Chip = ({ text }) => {
+const Chip = ({ text ,fecha}) => {
     return (
-        <span className="chip">{ text }</span>
+        <div className='chip'>
+        <div className='log'>{text.substring(0,1)}</div>
+        <span className='nombre'>{ text }</span>
+        <br/>
+        <span className="fecha">{fecha}</span>
+        </div>
     )
 }
 

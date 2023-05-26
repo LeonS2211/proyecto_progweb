@@ -1,5 +1,5 @@
 "use client"
-import 'bootstrap/dist/css/bootstrap.css'; // Add this line
+import 'bootstrap/dist/css/bootstrap.css'; 
 import 'bootstrap/dist/js/bootstrap.bundle.js' ;
 import '../components/Style/Style.jsx'
 import './globals.css'
@@ -31,6 +31,11 @@ const handleClick2 = () => {
 }
 const handleClick3 = () => {
   window.location.href = "/horario"
+
+}
+const handleClick4 = () => {
+  window.location.href = "/miscitas"
+
 }
 
   return (
@@ -65,9 +70,16 @@ const handleClick3 = () => {
               <button onClick={handleClick2} className='Bpri'>
                 Perfil
               </button>
+              {(loggedIn.role== "profesor") ? 
               <button onClick={handleClick3} className='Bpri'>
               Horarios
               </button>
+              :
+              <button onClick={handleClick4} className='Bpri'>
+              Citas
+              </button>}
+
+              
             </ul>
           </aside>
           {children}
