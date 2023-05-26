@@ -13,6 +13,9 @@ export default function Home() {
 	<li>
           <Link href="/paginaPerfil" text="paginaPerfil" />
         </li>
+        <li>
+          <Link href="/paginaComp" text="paginaComp"></Link>
+        </li>
       </ul>
     </main>
   )
