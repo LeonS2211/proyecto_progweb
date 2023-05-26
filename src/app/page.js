@@ -3,20 +3,21 @@
 import styles from './page.module.css'
 import Link from '../components/Link/Link.jsx';
 
+
+
+localStorage.setItem('loggedIn', null)
+
 export default function Home() {
   return (
-    <main >
-      <ul>
-        <li>
-        <Link href="/perfil" text="perfil" />
-        </li>
-	<li>
-          <Link href="/paginaPerfil" text="paginaPerfil" />
-        </li>
-        <li>
+    <div className={styles.inte}>
+      
+        <div className={styles.red}>
+        <Link href="/login " text="BIENVENIDO AL MUNDO MAGICO DE GUMBALL" />
           <Link href="/paginaComp" text="paginaComp"></Link>
-        </li>
-      </ul>
-    </main>
+        </div>
+
+    </div>
+
   )
 }
+
