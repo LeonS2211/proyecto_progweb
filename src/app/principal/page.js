@@ -6,16 +6,13 @@ import Chip from '../../components/Chip/Chip.jsx'
 import { useState } from 'react'
 import { useEffect } from 'react';
 import BotonCalif from '@/components/BotonCalif/BotonCalif'
+import citasAc from '../../api/citasAc'
 
 const pDocentes = () => {
-    const name =["george"];
-    const [arr, setArr] = useState([])
-    const fechas =["12/06/2023  Hora: 8:00 Am"];
-    useEffect(() => {
-        setArr(["Alonzo", "Martin"])
-    }, [])
+
 
     var loggedIn = JSON.parse(localStorage.getItem('loggedIn'))
+    const arr = citasAc.getAll();
 
     return(
         <div>
@@ -28,30 +25,35 @@ const pDocentes = () => {
           <div className='citas'>
                     {
                         arr.map(citas=>{
-                            return (<div className='fr' key={citas}><Chip text={citas} fecha={fechas}/> </div>)
+                            return (<div className='fr' key={citas}><Chip text={citas.nombre} fecha={citas.fecha}/> </div>)
                         })
                     }
           </div>
       
         </div>
         <div className='espacio'></div>
-        <BotonCalif/>
+        
 
   </div> 
     :
-        <div className='welcome'>
-        <p className='welcome-text'>¡Bienvenido ,Profesor {loggedIn.nombre}!  </p>
-        <div className='welcome-line'></div>
-        <div className='block-citas'>
-            <p>Proximas Citas</p>
-        <ul className='citas'>
-    <li>Elemento 1</li>
-    <li>Elemento 2</li>
-    <li>Elemento 3</li>
-    {/* Agrega más elementos según sea necesario */}
-  </ul>
-  </div>
-    </div> 
+    <div className='welcome'>
+    <p className='welcome-text'>¡Bienvenido , Profesor {loggedIn.nombre}!  </p>
+    <div className='welcome-line'></div>
+    <div className='block-citas'>
+        <p>Proximas Citas</p>
+        <div className='citas'>
+                  {
+                      arr.map(citas=>{
+                          return (<div className='fr' key={citas}><Chip text={citas.nombre} fecha={citas.fecha}/> </div>)
+                      })
+                  }
+        </div>
+    
+      </div>
+      <div className='espacio'></div>
+      
+
+</div> 
 }
     </div>
     

@@ -23,7 +23,8 @@ import Form from 'react-bootstrap/Form';
         tipoDoc:"DNI",
         nDoc:"12345678",
         role:"profesor",
-        curso:"Buenas tardes"
+        curso:"Programacion Web",
+        horarios:"20/06/2023"
     }
   ];
 
@@ -45,8 +46,6 @@ export default function Home() {
         <Button variant="danger" type="submit"  texto="Reset base de datos"/>
       </div>
     </Form>
-
-        
 
     </div>
 
