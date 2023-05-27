@@ -28,7 +28,7 @@ const handleClick1 = () => {
 
 const handleClick2 = () => {
     
-    window.location.href = "/paginaComp"
+    window.location.href = "/paginaPerfil"
 }
 const handleClick3 = () => {
   window.location.href = "/horario"
