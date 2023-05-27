@@ -39,7 +39,7 @@ const handleClick4 = () => {
 
 }
 const handleClick5 = () => {
-  window.location.href = "/vercalificaiones"
+  window.location.href = "/vercalificaciones"
 
 }
 
