@@ -27,7 +27,8 @@ const handleClick1 = () => {
 }
 
 const handleClick2 = () => {
-    alert('Hola2')
+    
+    window.location.href = "/paginaComp"
 }
 const handleClick3 = () => {
   window.location.href = "/horario"
