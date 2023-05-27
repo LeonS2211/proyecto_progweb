@@ -23,6 +23,7 @@ import Form from 'react-bootstrap/Form';
         tipoDoc:"DNI",
         nDoc:"12345678",
         role:"profesor",
+        curso:"Buenas tardes"
     }
   ];
 
