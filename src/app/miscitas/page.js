@@ -13,6 +13,7 @@ function CitasAlumno() {
             <div >
                 <h1 class="letra">Mis citas</h1>
                 <a class="btn btn-primary" href="#" id="Boton">Programar cita</a>  
+                <a class="btn btn-primary" href="#" id="Boton">Citas pasadas</a>  
                 <h5 class="letra">Citas de asesorias reservadas</h5>
                 <div class="contenedor">
                 {
