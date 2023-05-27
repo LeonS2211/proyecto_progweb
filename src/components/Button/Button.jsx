@@ -1,8 +1,8 @@
-const Button = ({ onClick, value }) => {
+import Boton from 'react-bootstrap/Button';
+
+const Button = ({ onClick, texto, variant, type, className }) => {
     return (
-        <button 
-            
-            onClick={() => onClick() }>{ value }</button>
+        <Boton className={className} onClick={() => onClick } variant={variant} type={type}>{ texto }</Boton>
     )
 }
 
