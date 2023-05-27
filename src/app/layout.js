@@ -16,14 +16,14 @@ const inter = Inter({ subsets: ['latin'] })
 function RootLayout({ children }) {
 const router = useRouter();
 var loggedIn = JSON.parse(localStorage.getItem('loggedIn'))
-const [asideVisible, setAsideVisible] = useState(false);
+const [asideVisible, setAsideVisible] = useState(true);
 const handleClick = () => {
     setAsideVisible(!asideVisible);
   };
 
 
 const handleClick1 = () => {
-    alert('Hola')
+  window.location.href = "/principal"
 }
 
 const handleClick2 = () => {

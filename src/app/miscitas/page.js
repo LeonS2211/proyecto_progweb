@@ -7,13 +7,16 @@ import styles from './page.modul.css';
 
 function CitasAlumno() {
     const arr = ProfesorApi.getAll();
+    const handleClick1 = () => {
+        window.location.href = "/miscitasPa"
+      }
     
     if(arr.length!=0){
         return(
             <div >
                 <h1 class="letra">Mis citas</h1>
                 <a class="btn btn-primary" href="#" id="Boton">Programar cita</a>  
-                <a class="btn btn-primary" href="#" id="Boton">Citas pasadas</a>  
+                <Button  onClick={handleClick1} className='CPa'>Citas pasadas</Button>  
                 <h5 class="letra">Citas de asesorias reservadas</h5>
                 <div class="contenedor">
                 {

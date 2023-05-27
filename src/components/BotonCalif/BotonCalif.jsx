@@ -11,8 +11,8 @@ const BotonCalif = ({}) => {
 const [modalShow, setModalShow] = useState(false);
   return (
     <>
-    <Button variant="primary" onClick={() => setModalShow(true)}>
-    Launch vertically centered modal
+    <Button variant="primary" onClick={() => setModalShow(true) } className='Bt'>
+    Calificar
   </Button>
 
   <ModalCalif
