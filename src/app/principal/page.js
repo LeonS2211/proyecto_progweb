@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { useEffect } from 'react';
 import BotonCalif from '@/components/BotonCalif/BotonCalif'
 import citasAc from '../../api/citasAc'
+import FilterNames from '@/components/FilterNames/FilterNames'
 
 const pDocentes = () => {
 
@@ -50,6 +51,7 @@ const pDocentes = () => {
         </div>
     
       </div>
+      
       <div className='espacio'></div>
       
 
