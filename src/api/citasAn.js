@@ -1,7 +1,7 @@
 let AllcitasAn =
 [
-    {nombre: "Pepe Lucho", titulo: "Magister PCH", fecha: "23/04/2023 12:00 Am", curso: "Programación Web", link: "#"},
-    {nombre: "Alonso Padrino", titulo: "Magister PCH", fecha: "23/04/2023 12:00 Am", curso: "Programación Web", link: "#"}
+    {nombre: "Pepe Lucho", titulo: "Magister PCH", fecha: "23/04/2023 12:00 Am", curso: "Programación Web", link: "#",calificacion:"5"},
+    {nombre: "Alonso Padrino", titulo: "Magister PCH", fecha: "23/04/2023 12:00 Am", curso: "Programación Web", link: "#",calificacion:"3"}
 
 ]
 

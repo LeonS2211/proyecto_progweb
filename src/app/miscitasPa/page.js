@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { useEffect } from 'react';
 import BotonCalif from '@/components/BotonCalif/BotonCalif'
 import citasAn from '../../api/citasAn'
+import '../../../public/star-filled.png'
 
 const pDocentes = () => {
 
@@ -25,7 +26,8 @@ const pDocentes = () => {
           <div className='citas'>
                     {
                         arr.map(citas=>{
-                            return (<div className='fr' key={citas}><Chip text={citas.nombre} fecha={citas.fecha}/> <BotonCalif/></div>)
+                            return (<div className='fr' key={citas}><Chip text={citas.nombre} fecha={citas.fecha}/> <BotonCalif/>
+                            <div className='calif'><a>{citas.calificacion}<img src={'star-filled.png'} className='img'/></a></div></div>)
                         })
                     }
           </div>
@@ -37,23 +39,24 @@ const pDocentes = () => {
   </div> 
     :
     <div className='welcome'>
-    <p className='welcome-text'>¡Bienvenido , Profesor {loggedIn.nombre}!  </p>
-    <div className='welcome-line'></div>
-    <div className='block-citas'>
-        <p>Proximas Citas</p>
-        <div className='citas'>
-                  {
-                      arr.map(citas=>{
-                          return (<div className='fr' key={citas}><Chip text={citas.nombre} fecha={citas.fecha}/> <BotonCalif/></div>)
-                      })
-                  }
-        </div>
-    
-      </div>
-      <div className='espacio'></div>
+      <p className='welcome-text'>¡Mis Citas Pasadas!</p>
+      <div className='welcome-line'></div>
+      <div className='block-citas'>
+          <p>Citas Anteriores</p>
+          <div className='citas'>
+                    {
+                        arr.map(citas=>{
+                            return (<div className='fr' key={citas}><Chip text={citas.nombre} fecha={citas.fecha}/> <BotonCalif/>
+                            <div className='calif'><a>{citas.calificacion}<img src={'star-filled.png'} className='img'/></a></div></div>)
+                        })
+                    }
+          </div>
       
+        </div>
+        <div className='espacio'></div>
+        
 
-</div> 
+  </div>  
 }
     </div>
     
