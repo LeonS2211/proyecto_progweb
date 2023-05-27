@@ -1,5 +1,5 @@
 'use client'
-
+import './styles.css'
 import React, { useState } from 'react';
 import Button from '../../components/Button/Button.jsx';
 import Form from 'react-bootstrap/Form';
