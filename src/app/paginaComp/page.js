@@ -74,6 +74,9 @@ const paginaComp=()=>{
         console.log(presentaciones)
     }
 
+    const basedatosPerfil=JSON.parse(localStorage.getItem('loggedIn'))
+
+    
     function TabBar() {
         return (
           <Tabs defaultActiveKey="datosUsuario" id="fill-tab-example" className="mb-3" fill>
