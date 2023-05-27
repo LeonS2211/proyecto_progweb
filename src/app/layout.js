@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Booper from '../components/Booper/Booper.jsx'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -64,7 +65,7 @@ const handleClick5 = () => {
         <header className='cabecera'>
           <div className='menu-icon'onClick={handleClick}>&#9776;</div>
             <main className='Titulo'> Atencion al cliente</main>
-          <div>Perfil</div>
+          <div className='icon-perfil' ><Booper/></div>
         </header>
         <div className='container'>
           <aside className={`aside ${asideVisible ? 'show' : ''}`}>
