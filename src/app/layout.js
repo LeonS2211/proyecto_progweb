@@ -1,5 +1,5 @@
 "use client"
-import 'bootstrap/dist/css/bootstrap.css'; // Add this line
+import 'bootstrap/dist/css/bootstrap.css'; 
 import 'bootstrap/dist/js/bootstrap.bundle.js' ;
 import '../components/Style/Style.jsx'
 import './globals.css'
@@ -27,13 +27,20 @@ const handleClick1 = () => {
 }
 
 const handleClick2 = () => {
-    alert('Hola2')
+    
+    window.location.href = "/paginaComp"
 }
 const handleClick3 = () => {
   window.location.href = "/horario"
+
 }
 const handleClick4 = () => {
   window.location.href = "/miscitas"
+
+}
+const handleClick5 = () => {
+  window.location.href = "/vercalificaiones"
+
 }
 
   return (
@@ -43,7 +50,7 @@ const handleClick4 = () => {
 
       </head>
       <body className='body'>
-      {(loggedIn == null) ? 
+      {(loggedIn === null) ? 
       <div>
         <header className='cabecera'>
           <main className='Titulo2'> Sistema de Citas para Atencion a Estudiantes</main>
@@ -69,9 +76,14 @@ const handleClick4 = () => {
                 Perfil
               </button>
               {(loggedIn.role== "profesor") ? 
+              <div>
               <button onClick={handleClick3} className='Bpri'>
               Horarios
               </button>
+              <button onClick={handleClick5} className='Bpri'>
+              Calificaciones
+              </button>
+              </div>
               :
               <button onClick={handleClick4} className='Bpri'>
               Citas

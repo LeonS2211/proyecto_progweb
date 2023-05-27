@@ -4,24 +4,24 @@ import Button from 'react-bootstrap/Button'
 import './page.modul.css'
 import Chip from '../../components/Chip/Chip.jsx'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { useEffect } from 'react';
 import BotonCalif from '@/components/BotonCalif/BotonCalif'
 
 const pDocentes = () => {
     const name =["george"];
-    const [loggedIn,setLoggedIn] = useState(null);
     const [arr, setArr] = useState([])
     const fechas =["12/06/2023  Hora: 8:00 Am"];
     useEffect(() => {
         setArr(["Alonzo", "Martin"])
     }, [])
 
+    var loggedIn = JSON.parse(localStorage.getItem('loggedIn'))
+
     return(
         <div>
-        {(loggedIn == null) ? 
+        {(loggedIn.role == "alumno") ? 
       <div className='welcome'>
-      <p className='welcome-text'>¡Bienvenido , {name}!  </p>
+      <p className='welcome-text'>¡Bienvenido , {loggedIn.nombre}!  </p>
       <div className='welcome-line'></div>
       <div className='block-citas'>
           <p>Proximas Citas</p>
@@ -40,7 +40,7 @@ const pDocentes = () => {
   </div> 
     :
         <div className='welcome'>
-        <p className='welcome-text'>¡Bienvenido ,Profesor {name}!  </p>
+        <p className='welcome-text'>¡Bienvenido ,Profesor {loggedIn.nombre}!  </p>
         <div className='welcome-line'></div>
         <div className='block-citas'>
             <p>Proximas Citas</p>
@@ -59,4 +59,5 @@ const pDocentes = () => {
 } 
 
 export default pDocentes
+
 
