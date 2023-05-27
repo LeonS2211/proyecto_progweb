@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import HorarioApi from '@/api/horario.js';
 import ListGroups from '../../components/ListGroup/ListGroup.jsx';
+import styles from './page.modul.css';
 
 const hDocentes = () => {
     
@@ -26,26 +27,26 @@ const handleOnClick = () => {
 }
 
 return(
-    <div>
-        <h1>MIS HORARIOS</h1>
-        <h5>Agregue sus horarios según su disponibilidad</h5>
+    <div class="contenedor">
+        <h1 class="letra">MIS HORARIOS</h1>
+        <h5 class="letra">Agregue sus horarios según su disponibilidad</h5>
         <div>
-            <Form.Label htmlfor="diasem">Dia de semana</Form.Label>
-            <Form.Control type="text" id="diasem"
+            <Form.Label htmlfor="diasem" class="letra">Dia de semana</Form.Label>
+            <Form.Control type="text"  id="diasem"
                 value={horario.diasem}
                 onChange={e=>setHorario({...horario, diasem: e.target.value})}/>
             
-            <Form.Label htmlfor="hinicio">Hora de inicio</Form.Label>
+            <Form.Label htmlfor="hinicio" class="letra">Hora de inicio</Form.Label>
             <Form.Control type="text" id="hinicio"
                 value={horario.hinicio}
                 onChange={e=>setHorario({...horario, hinicio: e.target.value})}/>
             
-            <Form.Label htmlfor="hfin">Hora de fin</Form.Label>
+            <Form.Label htmlfor="hfin" class="letra">Hora de fin</Form.Label>
             <Form.Control type="text" id="hfin"
                 value={horario.hfin}
                 onChange={e=>setHorario({...horario, hfin: e.target.value})}/>
             
-            <Form.Label htmlfor="link">Enlace de asesoria</Form.Label>
+            <Form.Label htmlfor="link" class="letra">Enlace de asesoria</Form.Label>
             <Form.Control type="text" id="link"
                 value={horario.link}
                 onChange={e=>setHorario({...horario, link: e.target.value})}/>
