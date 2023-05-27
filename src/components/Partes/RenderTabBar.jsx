@@ -1,25 +1,28 @@
-
+import Form from 'react-bootstrap/Form';
 import React from 'react';
 import TabContainer from 'react-bootstrap/TabContainer';
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
 import Chip from './ChipG';
+import PaginaComp from './PaginaComp'
 
 const RenderTabBar = ({
         
-    usuario,
-    setUsuario,
-    presentacion,
-    setPresentacion,
-    textBusqueda1,
-    setTextBusqueda1,
-    textBusqueda2,
-    setTextBusqueda2,
-    textBusqueda3,
-    setTextBusqueda3,
-    arr1=[],
-    arr2=[],
-    arr3=[],
+    
+    
+usuario,
+setUsuario,
+presentacion,
+setPresentacion,
+textBusqueda1,
+setTextBusqueda1,
+textBusqueda2,
+setTextBusqueda2,
+textBusqueda3,
+setTextBusqueda3,
+arr1=[],
+arr2=[],
+arr3=[],
     }) =>{
 
   const handleTituloChange=(e)=> {

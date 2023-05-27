@@ -20,21 +20,7 @@ import Nav from 'react-bootstrap/Nav';
 import Chip from '../../components/ChipG/ChipG.jsx'
 import './styles.css'
 
-/*class RenderTabBar extends React.Component {
-    constructor(props) {
-      super(props);
-      this.handleTituloChange = this.handleTituloChange.bind(this);
-      this.handlePresentacionChange = this.handlePresentacionChange.bind(this);
-      this.handleUniversidadChange = this.handleUniversidadChange.bind(this);
-      this.handleCarreraChange = this.handleCarreraChange.bind(this);
-      this.handleCursoChange = this.handleCursoChange.bind(this);
 
-    }*/
-  
-    
-    
-  
-    //render() {
 const RenderTabBar = ({
         
             usuario,
@@ -221,7 +207,7 @@ const RenderTabBar = ({
         </TabContainer>
       );
     }
-  //}
+  
 
 
 
