@@ -38,6 +38,10 @@ const handleClick4 = () => {
   window.location.href = "/miscitas"
 
 }
+const handleClick5 = () => {
+  window.location.href = "/vercalificaiones"
+
+}
 
   return (
     
@@ -72,9 +76,14 @@ const handleClick4 = () => {
                 Perfil
               </button>
               {(loggedIn.role== "profesor") ? 
+              <div>
               <button onClick={handleClick3} className='Bpri'>
               Horarios
               </button>
+              <button onClick={handleClick5} className='Bpri'>
+              Calificaciones
+              </button>
+              </div>
               :
               <button onClick={handleClick4} className='Bpri'>
               Citas
