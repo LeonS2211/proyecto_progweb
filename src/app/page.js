@@ -43,7 +43,7 @@ export default function Home() {
       </div>
     <Form onSubmit={handleReset}>
       <div className="op3">
-        <Button variant="danger" type="submit"  texto="Reset base de datos"/>
+        <Button variant="danger" type="submit"  texto="Cargar/reset base de datos"/>
       </div>
     </Form>
 
