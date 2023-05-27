@@ -8,6 +8,10 @@ import styles from './page.modul.css';
 function CitasAlumno() {
     const arr = ProfesorApi.getAll();
     
+    function BotonCancelar(arr, index){
+        arr.splice(index,1);
+    }
+
     if(arr.length!=0){
         return(
             <div >
@@ -20,12 +24,13 @@ function CitasAlumno() {
                     arr.map ((elemento) => (
                         <div class="card">
                         <Cards
+                            imagen = {elemento.imagen}
                             nombre = {elemento.nombre}
                             titulo = {elemento.titulo}
                             fecha = {elemento.fecha}
                             curso = {elemento.curso}
-                            link = 'https://zoom.us/es'
-                        /> 
+                            link = 'https://zoom.us/es'   
+                        /> <Button variant="danger">Cancelar</Button>
                         </div>
                     ))
                 }
