@@ -7,6 +7,9 @@ import styles from './page.modul.css';
 
 function CitasAlumno() {
     const arr = ProfesorApi.getAll();
+    const handleClick1 = () => {
+        window.location.href = "/miscitasPa"
+      }
     
     function BotonCancelar(arr, index){
         arr.splice(index,1);
@@ -17,7 +20,7 @@ function CitasAlumno() {
             <div >
                 <h1 class="letra">Mis citas</h1>
                 <a class="btn btn-primary" href="#" id="Boton">Programar cita</a>  
-                <a class="btn btn-primary" href="#" id="Boton">Citas pasadas</a>  
+                <Button  onClick={handleClick1} className='CPa'>Citas pasadas</Button>  
                 <h5 class="letra">Citas de asesorias reservadas</h5>
                 <div class="contenedor">
                 {
