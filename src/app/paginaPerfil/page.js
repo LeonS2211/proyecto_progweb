@@ -37,9 +37,10 @@ const paginaPerfil = () =>{
 
 
   const handleSave = () => {
-    // Aquí puedes realizar la lógica para guardar la imagen
-    // Por ejemplo, puedes enviarla al servidor o procesarla de alguna forma
-
+    
+    if (selectedImage) {
+      console.log('Imagen almacenada:', selectedImage);
+    }
     handleCloseModal();
   };
 
