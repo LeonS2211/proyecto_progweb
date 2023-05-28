@@ -9,6 +9,8 @@ import { Button } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Tab from 'react-bootstrap/Tab';
 
+import { Modal } from 'react-bootstrap';
+
 const paginaPerfil = () => {
   const [persona, setPersona] = useState({
     nombres: '',
@@ -55,7 +57,33 @@ const paginaPerfil = () => {
 
   }
 
-  
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      setSelectedImage(e.target.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSave = () => {
+    handleCloseModal();
+  };
 
   return (
     <div>
@@ -69,6 +97,36 @@ const paginaPerfil = () => {
       <div>
         
         <PersonalInfo persona={persona} setPersona={setPersona} />
+
+        <div>
+              <div className="profile-image-container">
+                {selectedImage ? (
+                  <img src={selectedImage} alt="Mi Imagen" className="profile-image" />
+                ) : (
+                  <img src="https://www.ulima.edu.pe/sites/default/files/styles/600x300/public/news/img/agenda-2-foromejoracontinua-may2022_0.jpg?itok=Z3bSJtG3" alt="Mi Imagen" className="profile-image" />
+                )}
+              </div>
+              <Button onClick={handleOpenModal}>Adjuntar imagen</Button>
+
+              <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Adjuntar imagen</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <input type="file" onChange={handleImageUpload} />
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleCloseModal}>
+                    Cancelar
+                  </Button>
+                  <Button variant="primary" onClick={handleSave} disabled={!selectedImage}>
+                    Guardar
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            </div>
+
+
       </div>
 
       <div>
@@ -93,7 +151,13 @@ const paginaPerfil = () => {
           <Tab.Content>
             <Tab.Pane eventKey="userData">
               <UserData usuario={usuario} setUsuario={setUsuario} />
+
+
+              
+
             </Tab.Pane>
+
+
             <Tab.Pane eventKey="university">
               <University
                 arr1={arr1}

@@ -25,6 +25,40 @@ import Form from 'react-bootstrap/Form';
         role:"profesor",
         curso:"Programacion Web",
         horarios:"20/06/2023"
+    },
+    {
+        email: "Alfredo",
+        password: "michi123",
+        nombre: "Alex",
+        apellido:"Pompeyo",
+        tipoDoc:"DNI",
+        nDoc:"12345678",
+        role:"profesor",
+        curso:"Programacion Web4",
+        horarios:"21/06/2023"
+    }
+    ,
+    {
+        email: "Alfredo",
+        password: "michi123",
+        nombre: "Alfrederic",
+        apellido:"Pompeyo",
+        tipoDoc:"DNI",
+        nDoc:"12345678",
+        role:"profesor",
+        curso:"Programacion Web3",
+        horarios:"24/06/2023"
+    },
+    {
+        email: "Mitchel",
+        password: "michi123",
+        nombre: "Mitchel",
+        apellido:"Pompeyo",
+        tipoDoc:"DNI",
+        nDoc:"12345678",
+        role:"profesor",
+        curso:"Programacion Web2",
+        horarios:"18/06/2023"
     }
   ];
 
@@ -43,7 +77,7 @@ export default function Home() {
       </div>
     <Form onSubmit={handleReset}>
       <div className="op3">
-        <Button variant="danger" type="submit"  texto="Reset base de datos"/>
+        <Button variant="danger" type="submit"  texto="Cargar/reset base de datos"/>
       </div>
     </Form>
 
