@@ -10,25 +10,26 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Booper from '../components/Booper/Booper.jsx'
 
 const inter = Inter({ subsets: ['latin'] })
 
 function RootLayout({ children }) {
 const router = useRouter();
 var loggedIn = JSON.parse(localStorage.getItem('loggedIn'))
-const [asideVisible, setAsideVisible] = useState(false);
+const [asideVisible, setAsideVisible] = useState(true);
 const handleClick = () => {
     setAsideVisible(!asideVisible);
   };
 
 
 const handleClick1 = () => {
-    alert('Hola')
+  window.location.href = "/principal"
 }
 
 const handleClick2 = () => {
     
-    window.location.href = "/paginaComp"
+    window.location.href = "/paginaPerfil"
 }
 const handleClick3 = () => {
   window.location.href = "/horario"
@@ -64,7 +65,7 @@ const handleClick5 = () => {
         <header className='cabecera'>
           <div className='menu-icon'onClick={handleClick}>&#9776;</div>
             <main className='Titulo'> Atencion al cliente</main>
-          <div>Perfil</div>
+          <div className='icon-perfil' ><Booper/></div>
         </header>
         <div className='container'>
           <aside className={`aside ${asideVisible ? 'show' : ''}`}>

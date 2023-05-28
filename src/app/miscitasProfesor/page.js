@@ -9,23 +9,29 @@ function CitasProfesor() {
     
     const arr = AlumnoApi.getAll();
 
+    function BotonCancelar(arr, index){
+        arr.splice(index,1);
+    }
+
     if(arr.length!=0){
         return(
             <div class="todo">
                 <h1 class="letra">Mis citas</h1>
-                <a class="btn btn-primary" href="#" id="Boton">Programar cita</a>  
+                <a class="btn btn-primary" href="#" id="Boton">Programar cita</a>
+                <a class="btn btn-primary" href="#" id="Boton">Citas pasadas</a>   
                 <h5 class="letra">Citas de asesorias reservadas</h5>
                 <div class="contenedor">
                 {
                     arr.map ((elemento) => (
                         <div class="card">
                         <Cards
+                            imagen = {elemento.imagen}
                             nombre = {elemento.nombre}
                             titulo = {elemento.titulo}
                             fecha = {elemento.fecha}
                             curso = {elemento.curso}
                             link = {elemento.link}
-                        />
+                        /><Button variant="danger">Cancelar</Button>
                         </div>
                     ))
                 }

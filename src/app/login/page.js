@@ -5,6 +5,7 @@ import Button from '../../components/Button/Button.jsx';
 import Form from 'react-bootstrap/Form';
 import Link from '../../components/Link/Link.jsx';
 import { Dangrek } from "next/font/google";
+import FilterNames from "@/components/FilterNames/FilterNames.jsx";
 
 const Login = () => {
 
@@ -70,6 +71,7 @@ const Login = () => {
         </div>
         </Form>
         </div>
+        <div><FilterNames></FilterNames></div>
       </div>
   );
 }
