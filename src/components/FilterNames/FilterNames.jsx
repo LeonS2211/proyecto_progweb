@@ -11,7 +11,7 @@ const FilterNames =()=>{
     const baseDatos = JSON.parse(localStorage.getItem('basedatos'))
     const profesores = baseDatos.filter(f => (f.role)=="profesor")
     const [arr, setArr] = useState(profesores)
-    const [visual,setVisual] = useState("Hor")
+    const [visual,setVisual] = useState("Nom")
     const [textBusqueda, setTextBusqueda] = useState("")
 
     const handleCita =({profesor},event)=>{

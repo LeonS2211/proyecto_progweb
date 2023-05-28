@@ -67,11 +67,11 @@ const University = ({ arr1, arr2, arr3 }) => {
           {arr1
             .filter((f) => f.includes(textBusqueda1))
             .map((universidad) => {
-              return (
+              /*return (
                 <li key={universidad}>
                   <Chip text={universidad} />
                 </li>
-              );
+              );*/
             })}
         </ul>
       </div>
@@ -105,11 +105,11 @@ const University = ({ arr1, arr2, arr3 }) => {
           {arr2
             .filter((f) => f.includes(textBusqueda2))
             .map((carrera) => {
-              return (
+              /*return (
                 <li key={carrera}>
                   <Chip text={carrera} />
                 </li>
-              );
+              );*/
             })}
         </ul>
       </div>
@@ -143,11 +143,11 @@ const University = ({ arr1, arr2, arr3 }) => {
           {arr3
             .filter((f) => f.includes(textBusqueda3))
             .map((curso) => {
-              return (
+              /*return (
                 <li key={curso}>
                   <Chip text={curso} />
                 </li>
-              );
+              );*/
             })}
         </ul>
       </div>
